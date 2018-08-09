@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "National Careers Service",
+      href: "/"
+    },
+    {
+      text: "Understand Myself"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Understand myself
+
+      </h1>
+
+      <p class="govuk-body">You can download a report after completing at least one quiz. </p>
+      <p class="govuk-body">The more quizzes you complete, the more information we have about you to create a higher quality report.</p>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Quiz objective</th>
+            <th class="govuk-table__header" scope="col">Status</th>
+              <th class="govuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{quiz1.description}}</td>
+            <td class="govuk-table__cell">{{quiz1.status}}</td>
+            <td class="govuk-table__cell"><a href="{{quiz1.url}}">{{quiz1.actionDisplay}}</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{quiz2.description}}</td>
+            <td class="govuk-table__cell">{{quiz2.status}}</td>
+            <td class="govuk-table__cell"><a href="{{quiz2.url}}">{{quiz2.actionDisplay}}</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{quiz3.description}}</td>
+            <td class="govuk-table__cell">{{quiz3.status}}</td>
+            <td class="govuk-table__cell"><a href="{{quiz3.url}}">{{quiz3.actionDisplay}}</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{quiz4.description}}</td>
+            <td class="govuk-table__cell">{{quiz4.status}}</td>
+            <td class="govuk-table__cell"><a href="{{quiz4.url}}">{{quiz4.actionDisplay}}</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+</div>
+
+{% endblock %}
